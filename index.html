@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teoria e Realidade — Ciência, Mistério e Fatos</title>
+  <meta name="description" content="Teoria e Realidade: investigações e análises sobre ciência, espaço, mistério e o que está por trás das narrativas. Conteúdo público e exclusivo para apoiantes." />
+  <meta name="theme-color" content="#00478C" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Teoria e Realidade" />
+  <meta property="og:description" content="Onde ciência, mistério e fatos se encontram. Investigações, conexões e análises além do vídeo público." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.png">
+
+  <!-- Font (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07090d;
+      --card: rgba(255,255,255,0.06);
+      --card2: rgba(255,255,255,0.09);
+      --text: #f2f2f2;
+      --muted: rgba(242,242,242,0.72);
+
+      --blue: #00478C;
+      --blue2: #04315F;
+      --red: #E41520;
+      --white: #ECEBEB;
+
+      --ring: rgba(0,71,140,0.35);
+      --ring2: rgba(228,21,32,0.22);
+      --shadow: 0 16px 50px rgba(0,0,0,0.50);
+
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 700px at 15% -10%, rgba(0,71,140,0.25), transparent 60%),
+                  radial-gradient(900px 600px at 70% 10%, rgba(228,21,32,0.18), transparent 55%),
+                  radial-gradient(900px 700px at 50% 110%, rgba(4,49,95,0.25), transparent 50%),
+                  var(--bg);
+      line-height: 1.45;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 18px; }
+
+    /* Top nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,9,13,0.55);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 190px;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(0,71,140,0.45), rgba(228,21,32,0.25));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .brand-mark img {
+      width: 40px;
+      height: 40px;
+      transform: scale(1.15);
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.35));
+    }
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+    .brand-name strong {
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+    .brand-name span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .links {
+      display: none;
+      gap: 18px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .links a:hover { color: var(--text); }
+
+    .cta-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 13px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.085);
+      border-color: rgba(255,255,255,0.22);
+    }
+    .btn.primary {
+      border-color: rgba(0,71,140,0.45);
+      background: linear-gradient(135deg, rgba(0,71,140,0.85), rgba(4,49,95,0.85));
+      box-shadow: 0 18px 45px rgba(0,71,140,0.18);
+    }
+    .btn.primary:hover {
+      border-color: rgba(0,71,140,0.65);
+      box-shadow: 0 18px 45px rgba(0,71,140,0.28);
+    }
+    .btn.red {
+      border-color: rgba(228,21,32,0.45);
+      background: linear-gradient(135deg, rgba(228,21,32,0.75), rgba(95,14,18,0.75));
+      box-shadow: 0 18px 45px rgba(228,21,32,0.18);
+    }
+
+    .icon {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.18);
+      position: relative;
+    }
+    .icon.dot::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 6px;
+      height: 6px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.85);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 54px 0 28px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+    .hero-card {
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+      box-shadow: var(--shadow);
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .glow {
+      position: absolute;
+      width: 540px;
+      height: 540px;
+      border-radius: 999px;
+      filter: blur(40px);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    .glow.blue { background: rgba(0,71,140,0.20); left: -240px; top: -240px; }
+    .glow.red { background: rgba(228,21,32,0.14); right: -240px; top: -260px; }
+    .glow.deep { background: rgba(4,49,95,0.18); left: 20%; bottom: -300px; }
+
+    .hero-top {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .hero-logo {
+      width: 112px;
+      height: 112px;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      display: grid;
+      place-items: center;
+      padding: 10px;
+      box-shadow: 0 18px 55px rgba(0,0,0,0.45);
+    }
+    .hero-logo img {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      filter: drop-shadow(0 16px 28px rgba(0,0,0,0.45));
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+    }
+    .kicker b {
+      color: var(--text);
+    }
+    h1 {
+      margin: 14px 0 10px;
+      font-size: 34px;
+      line-height: 1.08;
+      letter-spacing: -0.6px;
+    }
+    .sub {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 62ch;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    /* Sections */
+    section {
+      padding: 26px 0;
+    }
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .section-title h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .grid3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .card {
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.055);
+      padding: 16px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.22);
+    }
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 14px;
+      letter-spacing: -0.2px;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .tag .pill {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--blue);
+      box-shadow: 0 0 0 6px rgba(0,71,140,0.16);
+    }
+    .tag .pill.red {
+      background: var(--red);
+      box-shadow: 0 0 0 6px rgba(228,21,32,0.12);
+    }
+
+    /* Membership */
+    .tiers {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .tier {
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+      position: relative;
+      overflow: hidden;
+    }
+    .tier::before {
+      content: "";
+      position: absolute;
+      inset: -120px -120px auto auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at 30% 30%, rgba(0,71,140,0.30), transparent 60%);
+      filter: blur(6px);
+      opacity: 0.9;
+    }
+    .tier.red::before {
+      background: radial-gradient(circle at 30% 30%, rgba(228,21,32,0.22), transparent 60%);
+    }
+    .tier h3 {
+      margin: 0 0 6px;
+      font-size: 15px;
+    }
+    .price {
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: -0.6px;
+      margin: 0 0 10px;
+    }
+    ul {
+      margin: 0;
+      padding: 0 0 0 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    li { margin: 7px 0; }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+    label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.22);
+      color: var(--text);
+      outline: none;
+      font-family: inherit;
+      font-size: 14px;
+    }
+    input:focus, textarea:focus {
+      border-color: rgba(0,71,140,0.55);
+      box-shadow: 0 0 0 4px rgba(0,71,140,0.18);
+    }
+    textarea { min-height: 120px; resize: vertical; }
+
+    .footer {
+      padding: 22px 0 40px;
+      color: rgba(242,242,242,0.55);
+      font-size: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 18px;
+    }
+
+    /* Responsive */
+    @media (min-width: 860px) {
+      .links { display: flex; }
+      .hero-grid { grid-template-columns: 1.15fr 0.85fr; gap: 16px; }
+      .grid3 { grid-template-columns: repeat(3, 1fr); }
+      .tiers { grid-template-columns: repeat(3, 1fr); }
+      .contact-grid { grid-template-columns: 1.1fr 0.9fr; }
+      h1 { font-size: 44px; }
+      .hero-card { padding: 26px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Ir para o topo">
+          <span class="brand-mark" aria-hidden="true">
+       <img src="assets/logo.png" alt="Teoria e Realidade">
+          </span>
+          <span class="brand-name">
+            <strong>TEORIA E REALIDADE</strong>
+            <span>Ciência • Mistério • Fatos</span>
+          </span>
+        </a>
+
+        <nav class="links" aria-label="Navegação">
+          <a href="#manifesto">Manifesto</a>
+          <a href="#pilares">Pilares</a>
+          <a href="#membros">Membros</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="cta-row">
+          <!-- Ajuste estes links para os seus reais -->
+          <a class="btn red" href="https://www.youtube.com/channel/UCRhV7XNl910oMJB1GYJeElg" target="_blank" rel="https://www.youtube.com/channel/UCRhV7XNl910oMJB1GYJeElg">
+            <span class="icon dot" aria-hidden="true"></span> YouTube
+          </a>
+          <a class="btn primary" href="#membros">
+            <span class="icon" aria-hidden="true"></span> Apoiar
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="glow blue"></div>
+          <div class="glow red"></div>
+          <div class="glow deep"></div>
+
+          <div class="hero-top">
+            <div class="hero-logo">
+              <img src="assets/logo.png" alt="Logo Teoria e Realidade">
+            </div>
+            <div>
+              <div class="kicker"><span class="icon dot" aria-hidden="true"></span> Marca de mídia investigativa <b>Teoria e Realidade</b></div>
+              <h1>Onde ciência, mistério e fatos se encontram.</h1>
+              <p class="sub">
+                Investigamos fenômenos, evidências e narrativas — com profundidade, contexto e conexões que não cabem no vídeo público.
+                Aqui você encontra o hub da marca: conteúdos, apoio ao canal e contato.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn primary" href="#membros">Entrar para os membros</a>
+                <a class="btn" href="#manifesto">Entender a missão</a>
+                <a class="btn red" href="#contato">Falar comigo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card" style="padding:18px;">
+          <div class="tag"><span class="pill"></span> O que tem aqui</div>
+          <div class="card" style="margin-bottom:12px;">
+            <h3>Conteúdo público</h3>
+            <p>Vídeos investigativos para atrair curiosos e formar base de audiência.</p>
+          </div>
+          <div class="card" style="margin-bottom:12px;">
+            <h3>Conteúdo exclusivo (membros)</h3>
+            <p>Investigações aprofundadas, conexões entre casos e análises sensíveis.</p>
+          </div>
+          <div class="card">
+            <h3>Contato e parcerias</h3>
+            <p>Imprensa, convites, collabs e propostas: canal oficial de comunicação.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="manifesto">
+      <div class="section-title">
+        <h2>Manifesto</h2>
+        <p>O que esta marca promete — sem hype, sem ruído.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <div class="tag"><span class="pill"></span> Método</div>
+          <h3>Investigação com responsabilidade</h3>
+          <p>Separar hipótese de evidência, organizar fontes e explicar limites do que sabemos.</p>
+        </div>
+        <div class="card">
+          <div class="tag"><span class="pill red"></span> Narrativa</div>
+          <h3>Conexões que criam continuidade</h3>
+          <p>Em vez de correr atrás do hype, ligar pontos e construir séries que envelhecem bem.</p>
+        </div>
+        <div class="card">
+          <div class="tag"><span class="pill"></span> Comunidade</div>
+          <h3>Um lugar para quem quer ficar</h3>
+          <p>Os membros sustentam a profundidade: análises extras, bastidores e discussões mais cuidadosas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pilares">
+      <div class="section-title">
+        <h2>Pilares editoriais</h2>
+        <p>Para manter consistência de marca e evitar dispersão.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>Ciência aplicada</h3>
+          <p>O que a ciência realmente diz (e o que ela ainda não explica).</p>
+        </div>
+        <div class="card">
+          <h3>Espaço e cosmos</h3>
+          <p>Fenômenos astronômicos, missões, anomalias e hipóteses plausíveis.</p>
+        </div>
+        <div class="card">
+          <h3>Mistério com método</h3>
+          <p>Ufologia e casos virais filtrados por evidência, contexto e coerência.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="membros">
+      <div class="section-title">
+        <h2>Membros</h2>
+        <p>Comece pelo nível mais acessível; o objetivo é criar um núcleo forte.</p>
+      </div>
+
+      <div class="tiers">
+        <div class="tier">
+          <h3>Observador</h3>
+          <p class="price">R$ 3,99</p>
+          <ul>
+            <li>Vídeos exclusivos investigativos</li>
+            <li>Prioridade de resposta em comentários</li>
+            <li>Emblemas de fidelidade e emojis</li>
+          </ul>
+        </div>
+
+        <div class="tier">
+          <h3>Pesquisador</h3>
+          <p class="price">R$ 11,99</p>
+          <ul>
+            <li>Investigações aprofundadas e conexões entre casos</li>
+            <li>Acesso antecipado a análises sensíveis</li>
+            <li>Resposta prioritária + bônus de membros</li>
+          </ul>
+        </div>
+
+        <div class="tier red">
+          <h3>Explorador</h3>
+          <p class="price">R$ 23,99</p>
+          <ul>
+            <li>Menção como apoiador</li>
+            <li>Análise de um caso enviado pelo próprio membro (quando aplicável)</li>
+            <li>Tudo dos níveis anteriores</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hero-actions" style="margin-top:14px;">
+        <!-- Ajuste para o link real de "Seja membro" do canal -->
+        <a class="btn primary" href="https://www.youtube.com/channel/UCRhV7XNl910oMJB1GYJeElg/join" target="_blank" rel="noreferrer">Quero entrar para os membros</a>
+        <a class="btn" href="#contato">Parcerias e contato</a>
+      </div>
+
+      <p class="sub" style="margin-top:12px;">
+      </p>
+    </section>
+
+    <section id="contato">
+      <div class="section-title">
+        <h2>Contato</h2>
+        <p>Imprensa, colaborações, sugestões e propostas.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card">
+          <form id="contactForm">
+            <div class="field">
+              <label for="name">Seu nome</label>
+              <input id="name" name="name" placeholder="Ex.: Gabriel" required />
+            </div>
+
+            <div class="field" style="margin-top:10px;">
+              <label for="email">Seu e-mail</label>
+              <input id="email" name="email" type="email" placeholder="ex.: teoriaerealidadeoficial@email.com" required />
+            </div>
+
+            <div class="field" style="margin-top:10px;">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" placeholder="Descreva sua proposta, parceria ou sugestão" required></textarea>
+            </div>
+
+            <div class="hero-actions" style="margin-top:12px;">
+              <button class="btn primary" type="submit">Enviar (e-mail)</button>
+              <a class="btn" href="#top">Voltar ao topo</a>
+            </div>
+
+            <p class="sub" style="margin-top:10px;">
+              Este formulário abre seu aplicativo de e-mail (mailto). 
+            </p>
+          </form>
+        </div>
+
+<div class="card">
+  <div class="tag"><span class="pill"></span> Contatos rápidos</div>
+  <p class="sub" style="margin-top:0;">
+    Ajuste os links abaixo para seus perfis reais.
+  </p>
+
+  <div style="display:grid; gap:10px; margin-top:12px;">
+
+    <!-- YouTube (padrão) -->
+    <a
+      class="btn red"
+      href="https://www.youtube.com/channel/UCRhV7XNl910oMJB1GYJeElg"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Canal no YouTube
+    </a>
+
+    <!-- Instagram (roxinho claro) -->
+    <a
+      class="btn"
+      href="https://www.instagram.com/teoriaerealidadeofc/"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="background:#c4b5fd;color:#1f1f1f;"
+    >
+      Instagram
+    </a>
+
+    <!-- TikTok (cor padrão TikTok) -->
+    <a
+      class="btn"
+      href="https://www.tiktok.com/@teoriaerealidadeofc"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="background:#000000;color:#ffffff;"
+    >
+      TikTok
+    </a>
+
+    <!-- E-mail (azul institucional) -->
+    <a
+      class="btn"
+      href="mailto:contato@teoriaerealidade.com.br"
+      style="background:#3b82f6;color:#fff;"
+    >
+      E-mail oficial
+    </a>
+
+  </div>
+</div>
+
+
+          <div style="margin-top:14px;">
+            <div class="tag"><span class="pill red"></span> Recomendação de marca</div>
+            <p class="sub" style="margin-top:0;">
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container" style="padding:0;">
+        © <span id="year"></span> Teoria e Realidade. Todos os direitos reservados.
+        <span style="display:block; margin-top:6px;">
+        </span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Ano automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Envio via mailto (simples e robusto para GitHub Pages)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent('[Teoria e Realidade] Contato pelo site');
+      const body = encodeURIComponent(
+        'Nome: ' + name + '\n' +
+        'E-mail: ' + email + '\n\n' +
+        message
+      );
+
+      // Troque o e-mail abaixo pelo seu e-mail oficial:
+      const to = 'contato@teoriaerealidade.com.br';
+      window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
